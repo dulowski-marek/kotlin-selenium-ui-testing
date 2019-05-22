@@ -1,3 +1,6 @@
+# IntelliJ config
+.idea
+
 # Ignore Gradle project-specific cache directory
 .gradle
 
