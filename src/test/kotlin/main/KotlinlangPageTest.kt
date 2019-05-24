@@ -3,7 +3,9 @@
  */
 package main
 
+import org.junit.After
 import kotlin.test.Test
+import org.junit.Before
 import kotlin.test.assertEquals
 
 import java.net.URL
@@ -13,8 +15,9 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.RemoteWebDriver
 
-class AppTest {
+class KotlinlangPageTest {
     private var driver: WebDriver
+    private lateinit var page: KotlinlangPage
 
     init {
         // That is a default port and url for Selenium Hub
@@ -22,6 +25,13 @@ class AppTest {
         // Instantiate RemoteWebDriver with ChromeOptions
         driver = RemoteWebDriver(url, ChromeOptions())
     }
+
+    @Before
+    fun setup() {
+        page = KotlinlangPage(driver)
+    }
+
+    
 
     @Test
     fun testKotlinOrg() {
@@ -35,3 +45,4 @@ class AppTest {
         driver.quit()
     }
 }
+
